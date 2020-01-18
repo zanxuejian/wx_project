@@ -1,0 +1,67 @@
+<form bindsubmit="formSubmit"bindreset="formReset">
+<view>
+  <view>
+    <view>1.你的姓名</view>
+        <input auto-focus="true"/>
+  </view>
+  <view>
+    <view>2.性别</view>
+    <radio-group name="radio-group">
+      <label><radio value="radio1"/>男</label>
+      <label><radio value="radio2"/>女</label>
+    </radio-group>
+  </view>
+  <view>
+    <view>3.电话号码</view>
+        <input maxlength="11"  />
+  </view>
+  <view>
+    <view>4.QQ号</view>
+    <view>
+      <view>
+        <input type="number" maxlength="12" />
+      </view>
+    </view>
+  </view>
+  <view>
+    <view>5.是否为红绿色盲</view>
+    <switch name="switch"/>
+  </view>
+  <view>
+    <view>6.去过的国家</view>
+    <checkbox-group name="checkbox">
+      <label><checkbox value="checkbox1"/>中国</label>
+      <label><checkbox value="checkbox2"/>美国</label>
+      <label><checkbox value="checkbox3"/>日本</label>
+      <label><checkbox value="checkbox4"/>加拿大</label>
+      <label><checkbox value="checkbox5"/>澳大利亚</label>
+    </checkbox-group>
+  </view>
+  <view>
+  <view>6.家庭住址</view>
+  <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+    <view class="picker">
+      当前选择：{{region[0]}}，{{region[1]}}，{{region[2]}}
+    </view>
+  </picker>
+</view>
+  <view>
+    <view>7.个人介绍 （{{inputValue}}/100）</view>
+    <view>
+  <textarea bindinput="bindKeyInput" maxlength="100" style="height: 5em" />
+    </view>
+  </view>
+<view>
+  <view>8.填表日期</view>
+  <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+    <view class="picker">
+      当前选择: {{date}}
+    </view>
+  </picker>
+</view>
+</view>
+<view class="btn-area">
+    <button formType="submit">Submit</button>
+    <button formType="reset">Reset</button>
+  </view>
+</form>
